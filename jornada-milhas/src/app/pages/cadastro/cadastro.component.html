@@ -1,0 +1,95 @@
+<app-banner
+  src="assets/imagens/banner-cadastro.png"
+  alt="Banner da tela de cadastro"
+></app-banner>
+<section class="cadastro-component">
+  <div class="form-container">
+    <mat-card-header>
+      <mat-card-title>Crie sua conta</mat-card-title>
+    </mat-card-header>
+    <form>
+      <mat-card-content>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput type="text" placeholder="Digite seu nome" />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker1" placeholder="Selecione" />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <p>Gênero</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Masculino</mat-radio-button>
+            <mat-radio-button value="2">Feminino</mat-radio-button>
+            <mat-radio-button value="3">Prefiro não informar</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput type="text" placeholder="Digite seu CPF" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput type="tel" placeholder="+x xxxx-xxxx" />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input matInput type="text" placeholder="Digite seu nome" />
+          </mat-form-field>
+
+          <app-dropdown-uf></app-dropdown-uf>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput type="text" placeholder="Digite seu e-mail" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirmar e-mail</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Digite seu e-mail novamente"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input matInput type="text" placeholder="Digite seu CPF" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirmar senha</mat-label>
+            <input matInput type="text" placeholder="Repita sua senha" />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </form>
+    <mat-checkbox
+      >Li e aceito os termos e condições deste cadastro.</mat-checkbox
+    >
+  </div>
+  <mat-card-actions>
+    <button mat-flat-button color="primary">CRIAR MINHA CONTA</button>
+  </mat-card-actions>
+</section>

@@ -1,0 +1,19 @@
+.app-header {
+  .mat-toolbar {
+    background-color: black;
+    padding: 0 256px;  // Ajuste o valor conforme necessário
+  }
+
+  button {
+    margin: 0 16px;  // Adicione margens aos botões conforme necessário
+    color: white;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-mdc-outlined-button:not(:disabled) {
+    border-color: white;
+  }
+}

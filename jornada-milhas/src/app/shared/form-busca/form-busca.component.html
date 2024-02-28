@@ -1,0 +1,56 @@
+<app-card variant="secondary" class="form-busca">
+  <form [formGroup]="formBuscaService.formBusca" (ngSubmit)="buscar()">
+    <h2>Passagens</h2>
+    <div class="flex-container">
+      <mat-button-toggle-group
+        aria-label="Tipo de passagem"
+        formControlName="somenteIda"
+      >
+        <mat-button-toggle [value]="false">
+          <mat-icon *ngIf="!formBuscaService.formBusca.get('somenteIda')?.value">check</mat-icon>
+          IDA E VOLTA
+        </mat-button-toggle>
+        <mat-button-toggle [value]="true">
+          <mat-icon *ngIf="formBuscaService.formBusca.get('somenteIda')?.value">check</mat-icon>
+          SOMENTE IDA
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-chip (click)="formBuscaService.openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> 1 adulto
+        </div>
+      </mat-chip>
+      <mat-chip (click)="formBuscaService.openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> Econômica
+        </div>
+      </mat-chip>
+    </div>
+    <div class="flex-container">
+      <app-dropdown-uf label="Origem" iconePrefixo="flight_takeoff"></app-dropdown-uf>
+      <button mat-icon-button>
+        <mat-icon>sync_alt</mat-icon>
+      </button>
+      <app-dropdown-uf label="Destino" iconePrefixo="flight_land"></app-dropdown-uf>
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-label>Data de ida</mat-label>
+        <input matInput [matDatepicker]="picker1" placeholder="Selecione" />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="input-container" appearance="outline">
+        <mat-label>Data de volta</mat-label>
+        <input matInput [matDatepicker]="picker2" placeholder="Selecione" />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary">BUSCAR</button>
+    </div>
+  </form>
+</app-card>

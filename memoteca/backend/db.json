@@ -1,0 +1,22 @@
+{
+    "pensamentos": [
+        {
+            "id": 1,
+            "conteudo": "conteudo da API",
+            "autoria": "Pedrin backend",
+            "modelo": "modelo1"
+        },
+        {
+            "id": 2,
+            "conteudo": "conteudo da API",
+            "autoria": "João backend",
+            "modelo": "modelo2"
+        },
+        {
+            "id": 2,
+            "conteudo": "conteudo da API",
+            "autoria": "Maria backend",
+            "modelo": "modelo3"
+        }
+    ]
+}
